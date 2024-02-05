@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cn, imageUrl } from "@/lib/utils";
-import { movieDetails, movies } from "@/services/movies";
+import { movieDetails } from "@/services/movies";
 import { tvShowDetail } from "@/services/tv-shows/tv-show-detail";
 import StarRating from "./start-rating";
 

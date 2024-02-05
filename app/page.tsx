@@ -1,8 +1,6 @@
 import { movies } from "@/services/movies";
-import { movieDetails } from "@/services/movies/movie-details";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { PosterArtwork } from "@/components/ui/poster-artwork";
 import { Movies } from "@/types/movies";
 import { tvShows } from "@/services/tv-shows";
