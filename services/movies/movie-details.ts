@@ -1,4 +1,4 @@
-export const movies = async () => {
+export const movieDetails = async (movieId: string) => {
   const options = {
     method: "GET",
     headers: {
@@ -9,7 +9,7 @@ export const movies = async () => {
 
   try {
     const response = await fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
+      `https://api.themoviedb.org/3/movie/${movieId}`,
       options
     );
 
@@ -18,7 +18,7 @@ export const movies = async () => {
         return { ok: true };
       }
       const data = await response.json();
-      return data.results;
+      return data;
     }
   } catch (error) {
     throw error;

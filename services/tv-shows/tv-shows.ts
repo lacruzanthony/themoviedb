@@ -1,4 +1,4 @@
-export const movies = async () => {
+export const tvShows = async (time_window = "day", language = "en_US") => {
   const options = {
     method: "GET",
     headers: {
@@ -9,7 +9,7 @@ export const movies = async () => {
 
   try {
     const response = await fetch(
-      "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
+      `https://api.themoviedb.org/3/trending/tv/${time_window}?language=${language}`,
       options
     );
 
