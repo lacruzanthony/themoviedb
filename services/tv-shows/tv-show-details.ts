@@ -1,4 +1,4 @@
-export const tvShowDetail = async (id: string) => {
+export const tvShowDetails = async (id: string) => {
   debugger;
   const options = {
     method: "GET",
