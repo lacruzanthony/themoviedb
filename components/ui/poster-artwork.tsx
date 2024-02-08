@@ -14,7 +14,6 @@ interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
   height?: number;
   isSimilar?: boolean;
   isTvShow?: boolean;
-  isSimilar?: boolean;
 }
 
 export const PosterArtwork = async ({
