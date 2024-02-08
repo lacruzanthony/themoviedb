@@ -1,4 +1,4 @@
-export const tvShowDetails = async (id: string) => {
+export const similarMovies = async (movieId: string) => {
   const options = {
     method: "GET",
     headers: {
@@ -9,7 +9,7 @@ export const tvShowDetails = async (id: string) => {
 
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/tv/${id}`,
+      `https://api.themoviedb.org/3/movie/${movieId}/similar`,
       options
     );
 

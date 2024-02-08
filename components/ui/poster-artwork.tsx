@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { cn, imageUrl } from "@/lib/utils";
 import { movieDetails } from "@/services/movies";
-import { tvShowDetail } from "@/services/tv-shows/tv-show-detail";
+import { tvShowDetails } from "@/services/tv-shows";
 import StarRating from "./start-rating";
 
 interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -26,7 +26,7 @@ export const PosterArtwork = async ({
   ...props
 }: AlbumArtworkProps) => {
   const { poster_path, title, name, vote_average } = isTvShow
-    ? await tvShowDetail(id)
+    ? await tvShowDetails(id)
     : await movieDetails(id);
 
   return (
