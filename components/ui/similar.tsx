@@ -2,13 +2,14 @@ import React from "react";
 import { PosterArtwork } from "./poster-artwork";
 import { ScrollArea, ScrollBar } from "./scroll-area";
 import { Separator } from "./separator";
+import { SimilarsMovie } from "@/types/movie";
 
 export const Similar = ({
   similars,
   isMovie,
   isSimilar,
 }: {
-  similars: any;
+  similars: SimilarsMovie[];
   isMovie?: boolean;
   isSimilar?: boolean;
 }) => {
@@ -25,10 +26,10 @@ export const Similar = ({
       <div className="relative">
         <ScrollArea>
           <div className="flex space-x-4 pb-4">
-            {similars.map((similar: any) => (
+            {similars.map((similar) => (
               <PosterArtwork
-                key={similar.name}
-                id={similar.id}
+                key={similar.id.toString()}
+                id={similar.id.toString()}
                 className="w-[150px] shadow-sm"
                 aspectRatio="square"
                 width={150}
