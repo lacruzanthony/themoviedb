@@ -20,7 +20,7 @@ export default async function Home() {
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <h2 className="text-2xl font-semibold tracking-tight">
-                Our media
+                Top movies
               </h2>
               <p className="text-sm text-muted-foreground">
                 Top picks for you. Updated daily.
@@ -46,7 +46,7 @@ export default async function Home() {
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <h2 className="text-2xl font-semibold tracking-tight">
-                TV Shows
+                Top TV Shows
               </h2>
               <p className="text-sm text-muted-foreground">
                 Top picks for you. Updated daily.
