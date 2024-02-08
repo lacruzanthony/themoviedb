@@ -26,7 +26,7 @@ export const PosterArtwork = async ({
   ...props
 }: AlbumArtworkProps) => {
   const { poster_path, title, name, vote_average } = isTvShow
-    ? await tvShowDetail(id)
+    ? await tvShowDetails(id)
     : await movieDetails(id);
 
   return (
