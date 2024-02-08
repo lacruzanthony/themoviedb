@@ -12,6 +12,7 @@ interface AlbumArtworkProps extends React.HTMLAttributes<HTMLDivElement> {
   width?: number;
   height?: number;
   isTvShow?: boolean;
+  isSimilar?: boolean;
 }
 
 export const PosterArtwork = async ({
@@ -23,6 +24,7 @@ export const PosterArtwork = async ({
   key,
   className,
   isTvShow = false,
+  isSimilar,
   ...props
 }: AlbumArtworkProps) => {
   const { poster_path, title, name, vote_average } = isTvShow
@@ -47,7 +49,7 @@ export const PosterArtwork = async ({
         <h3 className="font-medium leading-none">{isTvShow ? name : title}</h3>
         <p className="text-xs text-muted-foreground">
           People votes:
-          <StarRating average={vote_average} />
+          <StarRating isSimilar={isSimilar} average={vote_average} />
         </p>
       </div>
     </div>
