@@ -1,5 +1,4 @@
 export const tvShowDetails = async (id: string) => {
-  debugger;
   const options = {
     method: "GET",
     headers: {
