@@ -54,7 +54,7 @@ export const PosterArtwork = async ({
           {isTvShow ? name : title}
         </h3>
         <p className="text-xs text-muted-foreground">People votes:</p>
-        <StarRating average={vote_average} />
+        <StarRating average={vote_average} isSimilar={isSimilar} />
       </div>
     </div>
   );

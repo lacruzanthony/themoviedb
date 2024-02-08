@@ -2,18 +2,19 @@ import React from "react";
 import { PosterArtwork } from "./poster-artwork";
 import { ScrollArea, ScrollBar } from "./scroll-area";
 import { Separator } from "./separator";
-import { SimilarsMovie } from "@/types/movie";
+import { TvShow } from "@/types/tv-show";
+import { Movie } from "@/types/movie";
 
 export const Similar = ({
   similars,
-  isMovie,
-  isSimilar,
+  isTvShow = false,
+  isSimilar = true,
 }: {
-  similars: SimilarsMovie[];
-  isMovie?: boolean;
+  similars: Movie[] | TvShow[];
+  isTvShow?: boolean;
   isSimilar?: boolean;
 }) => {
-  const header = isMovie ? "Similar movies" : "Similar TV Shows";
+  const header = isTvShow ? "Similar movies" : "Similar TV Shows";
   return (
     <div className="mb-10">
       <div className="mt-6 space-y-1">
@@ -35,6 +36,7 @@ export const Similar = ({
                 width={150}
                 height={150}
                 isSimilar={isSimilar}
+                isTvShow={isTvShow}
               />
             ))}
           </div>
