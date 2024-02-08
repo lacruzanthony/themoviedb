@@ -32,7 +32,7 @@ const StarRating = ({
           </Fragment>
         );
       })}
-      {isSimilar && (
+      {!isSimilar && (
         <span className="ml-1">{`(${roundedAverage.toFixed(1)} of 5)`}</span>
       )}
     </div>
