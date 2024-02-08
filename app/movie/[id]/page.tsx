@@ -26,7 +26,7 @@ export default async function MovieDetails({
           title={title}
           backdrop={backdrop}
         />
-        <Similar similars={similar.results} isMovie />
+        <Similar similars={similar.results} />
       </div>
     </>
   );
