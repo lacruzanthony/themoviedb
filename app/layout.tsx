@@ -16,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="bg-background">
+          <div className="border-t">
+            <div className="col-span-3 lg:col-span-4 lg:border-l">
+              {children}
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
