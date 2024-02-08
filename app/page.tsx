@@ -4,10 +4,11 @@ import { Separator } from "@/components/ui/separator";
 import { PosterArtwork } from "@/components/ui/poster-artwork";
 import { Movie } from "@/types/movie";
 import { tvShows } from "@/services/tv-shows";
+import { TvShow } from "@/types/tv-show";
 
 export default async function Home() {
-  const topMovies = await movies();
-  const topShows = await tvShows();
+  const topMovies: Movie[] = await movies();
+  const topShows: TvShow[] = await tvShows();
 
   return (
     <div className="h-full px-4 py-6 lg:px-8">
@@ -29,7 +30,7 @@ export default async function Home() {
           </div>
           <Separator className="my-4" />
           <div className="flex flex-wrap justify-center gap-4">
-            {topMovies.map((movie: Movie) => (
+            {topMovies.map((movie) => (
               <PosterArtwork
                 id={movie?.id.toString() || ""}
                 key={movie?.title}
@@ -55,7 +56,7 @@ export default async function Home() {
           </div>
           <Separator className="my-4" />
           <div className="flex flex-wrap justify-center gap-4">
-            {topShows.map((tvShow: any) => (
+            {topShows.map((tvShow) => (
               <PosterArtwork
                 id={tvShow?.id.toString() || ""}
                 key={tvShow?.title}
