@@ -34,7 +34,7 @@ export const ListContent = ({
             isTvShow={isTvShow}
             width={250}
             height={250}
-            className="w-250px"
+            className="w-[250px]"
             aspectRatio="portrait"
           />
         ))}
