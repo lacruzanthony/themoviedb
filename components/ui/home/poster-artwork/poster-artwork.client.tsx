@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { FC, PropsWithChildren } from "react";
 
 export const PosterArtWorkClient: FC<
@@ -16,12 +17,19 @@ export const PosterArtWorkClient: FC<
   posterPathUrl,
   posterName,
 }) => {
+  const router = useRouter();
   const href = `${id}`;
 
   return (
     <div className={cn("space-y-3 ", className)}>
       <div className="rounded-md max-w-xs m-2 overflow-hidden ">
-        <a href={href}>
+        <a
+          href={href}
+          onClick={(event) => {
+            event.preventDefault();
+            router.push(href);
+          }}
+        >
           <Image
             alt={id}
             src={posterPathUrl}
