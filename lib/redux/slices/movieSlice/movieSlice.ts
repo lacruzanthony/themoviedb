@@ -19,10 +19,10 @@ export const movieSlice = createSlice({
   reducers: {
     // Use the PayloadAction type to declare the contents of `action.payload`
     setMovies: (state, action: PayloadAction<Movie[]>) => {
-      state.value.concat(action.payload);
+      state.value = [...state.value, ...action.payload];
     },
     setOneMovie: (state, action: PayloadAction<Movie>) => {
-      state.value.concat(action.payload);
+      state.value = [...state.value, action.payload];
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,

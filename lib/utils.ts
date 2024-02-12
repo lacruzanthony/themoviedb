@@ -8,3 +8,12 @@ export function cn(...inputs: ClassValue[]) {
 export const imageUrl = (poster_path: string, posterWidth = "w300") => {
   return `${process.env.IMAGE_BASE_URL}${posterWidth}${poster_path}`;
 };
+
+export const getPromiseSettledValue = <T>(
+  result: PromiseSettledResult<T>
+): T | null => {
+  if (result.status === "fulfilled") {
+    return result.value;
+  }
+  return null;
+};
