@@ -18,7 +18,6 @@ export const similarTvShows = async (serieId: string) => {
         return { ok: true };
       }
       const data = await response.json();
-
       return data.results;
     }
   } catch (error) {
