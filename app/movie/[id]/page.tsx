@@ -2,6 +2,7 @@ import FilmDetail from "@/components/ui/film-detail";
 import { movieDetails, similarMovies } from "@/services/movies";
 import { imageUrl } from "@/lib/utils";
 import { Similar } from "@/components/ui/similar";
+import { Movie } from "@/types/movie";
 
 export default async function MovieDetails({
   params,
@@ -12,9 +13,13 @@ export default async function MovieDetails({
   const { backdrop_path, title, overview, poster_path } = await movieDetails(
     id
   );
-  const similar = await similarMovies(id);
+  const similars: Movie[] = await similarMovies(id);
   const backdrop = imageUrl(backdrop_path, "w1280");
   const poster = imageUrl(poster_path);
+  const similarsMap = similars.map((similar) => ({
+    ...similar,
+    url: similar.id.toString(),
+  }));
 
   return (
     <>
@@ -26,7 +31,7 @@ export default async function MovieDetails({
           title={title}
           backdrop={backdrop}
         />
-        <Similar similars={similar.results} />
+        <Similar similars={similarsMap} />
       </div>
     </>
   );
