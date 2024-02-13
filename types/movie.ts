@@ -1,4 +1,5 @@
 export interface Movie {
+  url: string;
   adult: boolean;
   backdrop_path: string;
   id: number;
