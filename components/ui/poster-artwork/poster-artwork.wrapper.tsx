@@ -9,6 +9,7 @@ export const PosterArtWorkWrapper = async ({
   width,
   height,
   className,
+  url,
 }: {
   id: string;
   isTvShow: boolean;
@@ -16,6 +17,7 @@ export const PosterArtWorkWrapper = async ({
   height: number;
   aspectRatio: "portrait" | "square";
   className: string;
+  url: string;
 }) => {
   const { poster_path, title, name, vote_average } = isTvShow
     ? await tvShowDetails(id)
@@ -32,6 +34,7 @@ export const PosterArtWorkWrapper = async ({
     width,
     height,
     className,
+    url,
   };
 
   return <PosterArtWorkServer {...props} />;

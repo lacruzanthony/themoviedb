@@ -16,18 +16,18 @@ export const PosterArtWorkClient: FC<
   children,
   posterPathUrl,
   posterName,
+  url,
 }) => {
   const router = useRouter();
-  const href = `${id}`;
 
   return (
     <div className={cn("space-y-3 ", className)}>
       <div className="rounded-md max-w-xs m-2 overflow-hidden ">
         <a
-          href={href}
+          href={url}
           onClick={(event) => {
             event.preventDefault();
-            router.push(href);
+            router.push(url);
           }}
         >
           <Image
@@ -59,4 +59,5 @@ type PosterArtWorkClientType = {
   height: number;
   aspectRatio: string;
   posterName: string;
+  url: string;
 };

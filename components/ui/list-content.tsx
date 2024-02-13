@@ -1,7 +1,7 @@
 import { Movie } from "@/types/movie";
 import { TvShow } from "@/types/tv-show";
 import { Separator } from "@/components/ui/separator";
-import { PosterArtWorkWrapper } from "./home/poster-artwork";
+import { PosterArtWorkWrapper } from "./poster-artwork";
 
 export const ListContent = ({
   list,
@@ -28,11 +28,12 @@ export const ListContent = ({
       <div className="flex flex-wrap justify-center gap-4">
         {list.map((item) => (
           <PosterArtWorkWrapper
+            url={item.url}
             key={item.id}
             id={item.id.toString()}
             isTvShow={isTvShow}
-            width={300}
-            height={300}
+            width={250}
+            height={250}
             className="w-250px"
             aspectRatio="portrait"
           />

@@ -2,6 +2,7 @@ import FilmDetail from "@/components/ui/film-detail";
 import { imageUrl } from "@/lib/utils";
 import { Similar } from "@/components/ui/similar";
 import { similarTvShows, tvShowDetails } from "@/services/tv-shows";
+import { TvShow } from "@/types/tv-show";
 
 export default async function ShowDetails({
   params,
@@ -12,9 +13,13 @@ export default async function ShowDetails({
   const { backdrop_path, name, overview, poster_path } = await tvShowDetails(
     id
   );
-  const similars = await similarTvShows(id);
+  const similars: TvShow[] = await similarTvShows(id);
   const backdrop = imageUrl(backdrop_path, "w1280");
   const poster = imageUrl(poster_path);
+  const similarsMap = similars.map((similar) => ({
+    ...similar,
+    url: similar.id.toString(),
+  }));
 
   return (
     <>
@@ -28,7 +33,7 @@ export default async function ShowDetails({
           title={name}
           backdrop={backdrop}
         />
-        <Similar similars={similars} isSimilar isTvShow={true} />
+        <Similar similars={similarsMap} isSimilar isTvShow />
       </div>
     </>
   );

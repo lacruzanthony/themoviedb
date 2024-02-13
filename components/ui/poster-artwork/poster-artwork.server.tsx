@@ -1,6 +1,6 @@
 import { imageUrl } from "@/lib/utils";
 import { PosterArtWorkClient } from "./poster-artwork.client";
-import StarRating from "../../start-rating";
+import StarRating from "../start-rating";
 import { FC } from "react";
 
 export const PosterArtWorkServer: FC<PosterArtWorkServerType> = (props) => {
@@ -14,7 +14,7 @@ export const PosterArtWorkServer: FC<PosterArtWorkServerType> = (props) => {
       posterName={posterName ?? ""}
       {...props}
     >
-      <StarRating average={vote_average} isSimilar={false} />
+      <StarRating average={vote_average} />
     </PosterArtWorkClient>
   );
 };
@@ -30,4 +30,5 @@ type PosterArtWorkServerType = {
   name?: string;
   vote_average: number;
   isTvShow: boolean;
+  url: string;
 };
