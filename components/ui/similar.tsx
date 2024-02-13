@@ -3,7 +3,7 @@ import { ScrollArea, ScrollBar } from "./scroll-area";
 import { Separator } from "./separator";
 import { TvShow } from "@/types/tv-show";
 import { Movie } from "@/types/movie";
-import { PosterArtWorkWrapper } from "./home/poster-artwork";
+import { PosterArtWorkWrapper } from "./poster-artwork";
 
 export const Similar = ({
   similars,
@@ -14,7 +14,7 @@ export const Similar = ({
   isTvShow?: boolean;
   isSimilar?: boolean;
 }) => {
-  const header = isTvShow ? "Similar movies" : "Similar TV Shows";
+  const header = isTvShow ? "Similar TV Shows" : "Similar movies";
   return (
     <div className="mb-10">
       <div className="mt-6 space-y-1">
@@ -29,6 +29,7 @@ export const Similar = ({
           <div className="flex space-x-4 pb-4">
             {similars.map((similar) => (
               <PosterArtWorkWrapper
+                url={similar.url}
                 key={similar.id}
                 id={similar.id.toString()}
                 isTvShow={isTvShow}
@@ -37,16 +38,6 @@ export const Similar = ({
                 height={150}
                 className="w-[150px]"
               />
-              // <PosterArtwork
-              //   key={similar.id.toString()}
-              //   id={similar.id.toString()}
-              //   className="w-[150px] shadow-sm"
-              //   aspectRatio="square"
-              //   width={150}
-              //   height={150}
-              //   isSimilar={isSimilar}
-              //   isTvShow={isTvShow}
-              // />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />

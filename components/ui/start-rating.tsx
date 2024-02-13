@@ -1,12 +1,6 @@
 import { Fragment } from "react";
 
-const StarRating = ({
-  average,
-  isSimilar = false,
-}: {
-  isSimilar?: boolean;
-  average: number;
-}) => {
+const StarRating = ({ average }: { average: number }) => {
   const scaledAverage = average / 2;
   const roundedAverage = Math.round(scaledAverage * 2) / 2;
 
@@ -32,9 +26,9 @@ const StarRating = ({
           </Fragment>
         );
       })}
-      {!isSimilar && (
-        <span className="ml-1">{`(${roundedAverage.toFixed(1)} of 5)`}</span>
-      )}
+      <span className="ml-1 truncate">{`(${roundedAverage.toFixed(
+        1
+      )} of 5)`}</span>
     </div>
   );
 };
