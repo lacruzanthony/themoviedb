@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/lib/providers";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from "@/components/ui/menubar";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +29,16 @@ export default function RootLayout({
         <body className={inter.className}>
           <div className="bg-background">
             <div className="border-t">
+              <Menubar className="flex justify-center rounded-none border-b border-none px-2 lg:px-4">
+                <MenubarMenu>
+                  <MenubarTrigger className="font-bold">TMDB</MenubarTrigger>
+                  <MenubarContent>
+                    <Link href={"/"}>
+                      <MenubarItem>Home</MenubarItem>
+                    </Link>
+                  </MenubarContent>
+                </MenubarMenu>
+              </Menubar>
               <div className="col-span-3 lg:col-span-4 lg:border-l">
                 {children}
               </div>
