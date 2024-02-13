@@ -10,8 +10,15 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Inter as FontSans } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +33,12 @@ export default function RootLayout({
   return (
     <Providers>
       <html lang="en">
-        <body className={inter.className}>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable
+          )}
+        >
           <div className="bg-background">
             <div className="border-t">
               <Menubar className="flex justify-center rounded-none border-b border-none px-2 lg:px-4">
