@@ -18,7 +18,6 @@ export const similarMovies = async (movieId: string) => {
         return { ok: true };
       }
       const data = await response.json();
-      console.log(data.results);
 
       return data.results;
     }

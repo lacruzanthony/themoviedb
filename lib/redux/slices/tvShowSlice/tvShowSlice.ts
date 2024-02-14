@@ -14,7 +14,7 @@ export const tvShowsSlice = createSlice({
     setTvShows: (state, action: PayloadAction<TvShow[]>) => {
       state.value = [...state.value, ...action.payload];
     },
-    setTvShow: (state, action: PayloadAction<TvShow>) => {
+    setTvShow: (state, action) => {
       state.value = [...state.value, action.payload];
     },
   },
