@@ -1,4 +1,3 @@
-import { fallbackImage } from "@/components/ui/image-with-fallback";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
