@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FC, PropsWithChildren } from "react";
-import { ImageWithFallback, fallbackImage } from "../image-with-fallback";
 
 export const PosterArtWorkClient: FC<
   PropsWithChildren<PosterArtWorkClientType>
@@ -45,8 +44,7 @@ export const PosterArtWorkClient: FC<
             router.push(url);
           }}
         >
-          <ImageWithFallback
-            fallback={fallbackImage}
+          <Image
             alt={id}
             src={posterPathUrl}
             onClick={() => onClickHandler()}
