@@ -31,7 +31,7 @@ export default function FilmDetail({
           src={poster}
           width="200"
         />
-        <div className="ml-8 text-black p-4 rounded-lg backdrop-blur-md">
+        <div className="ml-8 text-white mix-blend-difference p-4 rounded-lg backdrop-blur-md backdrop-saturate-200">
           <h1 className="text-4xl font-bold">{title}</h1>
           <h2 className="mt-4 text-2xl font-bold">Overview</h2>
           <p className="mt-2 text-lg">{overview}</p>
