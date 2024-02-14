@@ -21,7 +21,7 @@ export const movieSlice = createSlice({
     setMovies: (state, action: PayloadAction<Movie[]>) => {
       state.value = [...state.value, ...action.payload];
     },
-    setOneMovie: (state, action: PayloadAction<Movie>) => {
+    setOneMovie: (state, action) => {
       state.value = [...state.value, action.payload];
     },
   },
