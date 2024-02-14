@@ -1,3 +1,4 @@
+import { fallbackImage } from "@/components/ui/image-with-fallback";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -6,6 +7,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const imageUrl = (poster_path: string, posterWidth = "w300") => {
+  if (!poster_path) {
+    return "/fallback.webp";
+  }
   return `${process.env.IMAGE_BASE_URL}${posterWidth}${poster_path}`;
 };
 

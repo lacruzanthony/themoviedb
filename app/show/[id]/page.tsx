@@ -32,7 +32,6 @@ export default async function ShowDetails({
           overview={overview}
           title={name}
           backdrop={backdrop}
-          isTvShow
         />
         <Similar similars={similarsMap} isSimilar isTvShow />
       </div>

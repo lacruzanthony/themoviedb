@@ -9,27 +9,12 @@ export default function FilmDetail({
   overview,
   backdrop,
   poster,
-  isTvShow = false,
 }: {
   title: string;
   overview: string;
   backdrop: string;
   poster: string;
-  isTvShow?: boolean;
 }) {
-  const dispatch = useDispatch();
-  isTvShow
-    ? dispatch(
-        tvShowsSlice.actions.setTvShow({ title, overview, poster, backdrop })
-      )
-    : dispatch(
-        movieSlice.actions.setOneMovie({
-          title,
-          overview,
-          backdrop,
-          poster,
-        })
-      );
   return (
     <div
       className="p-8 relative h-90 bg-cover bg-no-repeat bg-center rounded-lg shadow-lg bg-[#d4d4d8]"
