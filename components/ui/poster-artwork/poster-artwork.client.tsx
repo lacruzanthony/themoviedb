@@ -1,5 +1,6 @@
 "use client";
 
+import { movieSlice, tvShowsSlice, useDispatch } from "@/lib/redux";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -17,8 +18,21 @@ export const PosterArtWorkClient: FC<
   posterPathUrl,
   posterName,
   url,
+  isTvShow,
 }) => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const onClickHandler = () => {
+    if (isTvShow) {
+      dispatch(
+        tvShowsSlice.actions.setTvShow({ id, posterPathUrl, posterName, url })
+      );
+    } else {
+      dispatch(
+        movieSlice.actions.setOneMovie({ id, posterPathUrl, posterName, url })
+      );
+    }
+  };
 
   return (
     <div className={cn("space-y-3 ", className)}>
@@ -33,6 +47,7 @@ export const PosterArtWorkClient: FC<
           <Image
             alt={id}
             src={posterPathUrl}
+            onClick={() => onClickHandler()}
             width={width}
             height={height}
             className={cn(
@@ -60,4 +75,5 @@ type PosterArtWorkClientType = {
   aspectRatio: string;
   posterName: string;
   url: string;
+  isTvShow: boolean;
 };
