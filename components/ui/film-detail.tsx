@@ -15,7 +15,7 @@ export default function FilmDetail({
 }) {
   const textBlend = backdrop.includes("fallback")
     ? "mix-blend-difference"
-    : "mix-blend-color-dodge";
+    : "mix-blend-screen";
   return (
     <div
       className="p-8 relative h-90 bg-cover bg-no-repeat bg-center rounded-lg shadow-lg bg-[#d4d4d8] bg-blend-luminosity"
